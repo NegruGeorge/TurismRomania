@@ -1,0 +1,138 @@
+
+<link rel="stylesheet"  href="/stylesheets/map.css">
+
+<link rel ="stylesheet" href = https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css>
+<link rel="stylesheet"  href="/stylesheets/header.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+
+
+<header>
+      
+    <!-- <img src="/images/Poza.jpg" > -->
+    <a href="/map" class="button">TOURISM</a>
+
+  
+    <nav class="navbar">
+        <a href="#"  class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="nav__links">
+            <ul>
+               <li>
+                  <a href="/map">
+                     <div class="icon">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                     </div>
+                     <div class="mame" data-text="Home">Home</div>
+                  </a>
+               </li>
+               <li>
+                  <a href="/about">
+                     <div class="icon">
+                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                     </div>
+                     <div class="mame" data-text="About">About</div>
+                  </a>
+               </li>
+               <li>
+                <% if((typeof(session)!=="undefined")){%>
+                  <a href="/signout">
+                     <div class="icon">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                     </div>
+                     <div class="mame" data-text="Add"><a href="/signout">Sign out</a></div>
+                  </a>
+
+                <%}else{%>
+                    <a href="/signup">
+                        <div class="icon">
+                           <i class="fa fa-plus" aria-hidden="true"></i>
+                        </div>
+                        <div class="mame" data-text="Add"><a href="/signup">Sign up</a></div>
+                     </a>
+                <%}%>
+               </li>
+               <li>
+                  <a href="#">
+                     <div class="icon">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                     </div>
+                     <% if((typeof(session)!=="undefined")){%>
+                     <div class="mame" data-text="Home"><a href="/account">Account</a></div>
+                     <%}else{ %>
+                        <div class="mame" data-text="Home"><a href="/signin">Sign in</a></div>
+                     <%} %>  
+                  </a>
+               </li>
+               
+
+        </ul>
+        </div>
+        &nbsp; &nbsp;
+    </nav>
+    &nbsp; &nbsp;
+    <script src="/js/header.js"></script>
+</header>
+
+
+<div id='map' style='width: 100%; height: 500px;'>
+
+
+</div>
+
+
+<div class="container">
+    <div class="search-box">
+        <!-- Search form -->
+        <form action="/map" method="POST">
+            <label for="locatie_form">introduceti o localitate</label>
+            <input class="form-control" type="text" name="locatie_form" id="locatie_form" placeholder="Search" aria-label="Search">   
+        </form>
+
+    </div>
+    
+    <ul>
+        <% for(let locatie of locatii) { %>
+            &nbsp; &nbsp;
+    
+               <div class="card" mb-3>
+                   <div class="row">
+                       <div class="col-md-4">
+                           <img src="<%=locatie.img%>" class="img-fluid" alt="">
+                       </div>
+                       <div class="col-md-8">
+                           <div class="card-body">
+                              <h5 class="card-title" style="color: #F4A460;"> <%= locatie.titlu_obiectiv%></h5>
+                               <small class="text-muted">Locatie: <%= locatie.Oras%></small>
+                                <p><a href="/map/<%=locatie.id_locatie%>" id="more-details"><span>Afla mai multe</span></a></p>
+                           </div>
+                       </div>
+                   </div>
+                   
+               </div>
+             
+    
+       <%} %>
+    </ul>
+
+
+</div>
+
+
+<script>
+    let locatiile = {features: <%- JSON.stringify(locatii) %>}
+</script>
+
+<script>
+    let loca =  <%- JSON.stringify(locatii) %>
+</script>
+
+
+<script src="/js/map_cluster.js"></script>
+
+<%- include('./header/footer.ejs') %>

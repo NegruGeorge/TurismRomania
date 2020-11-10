@@ -1,0 +1,42 @@
+<html>
+<head>
+    <link rel ="stylesheet" href = "/stylesheets/form_styles.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@9"></script>
+</head>
+
+
+
+
+
+<div class="container">
+    <div class="header">
+        <h2>Sign in</h2>
+    </div>
+    <form class="form" method="POST" action="/signin"  id="form">
+        <div class="form-control">
+ 
+        <div class="form-control">
+            <label>Mail</label>
+            <input type="text"
+            placeholder="patcasrares2@gmail.com" id="Mail" name="mail">
+            <i class="fa fa-check-circle"></i>
+            <i class="fa fa-exclamation-circle"></i>
+            <small>Error message</small>
+        </div>
+        
+        
+            <div class="form-control">
+                <label>Password</label>
+                <input type="password"
+                placeholder="Password" id="Password" name="password">
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small>Error message</small>
+            </div>
+
+        <button>Sign in</button>
+    </form>
+</div>
+<script src="js/signin.js" ></script>
+</html>

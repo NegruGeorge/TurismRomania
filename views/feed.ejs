@@ -1,0 +1,34 @@
+
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+
+
+<div id='map' style='width: 100%; height: 500px;'>
+
+
+</div>
+
+
+<h1>locatii show</h1>
+
+<ul>
+    <% for(let locatie of locatii) { %>
+        <li>
+            <a href='/feed/<%= locatie.id_locatie%>'>
+                <%= locatie.titlu_obiectiv %>
+            </a>
+        </li>
+    <%} %>
+</ul>
+
+<script>
+    let locatiile = {features: <%- JSON.stringify(locatii) %>}
+</script>
+
+<script>
+    let loca =  <%- JSON.stringify(locatii) %>
+</script>
+
+
+<script src="/js/map_cluster.js"></script>
+

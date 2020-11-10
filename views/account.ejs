@@ -1,0 +1,71 @@
+<link rel="stylesheet" href="/stylesheets/account.css">
+
+
+<header>
+    <!-- <img class="logo" src="bot.png" alt="logo"> -->
+    
+        <h2 class="siteName">Turism </h2>
+
+        <nav class="navbar">
+          
+            <div class="nav__links">
+               
+                <li>
+                    <a href="/map" class="cta"><button class="aboutbutton">Home</button></a>
+                </li>
+              
+
+            </ul>
+            </div>
+            
+        </nav>
+  
+</header>
+
+
+
+<div class="actions">
+        
+    <div class="flexbox-container">
+        
+        <div class="flexbox-item flexbox-video-1">
+            <div class="header">
+                <h1>Buna <%=user.nume%> <%=user.prenume%> </h1>
+            </div>
+            <div class="imgBox">    
+                <h1 class="imgh1">Punctele tale:  <strong><%=user.puncte%></strong></h1>
+                
+                <h2 class="imgh2">Top punctaje:</h2>
+                <h2 class="imgh2">1):<%=scoruri[0]%></h2>
+                <h2 class="imgh2">2):<%=scoruri[1]%></h2>
+                <h2 class="imgh2">3):<%=scoruri[2]%></h2>
+
+                <% if(user.puncte<100) {%>
+                    <h2 class="imgh2">Inca ai sub 100 de puncte :( keep travelling</h2>
+                <%}else if(user.puncte<500) {%>
+                    <h2 class="imgh2"> BRAVOOO ai depasit 100 de puncte ca premiu primesti un link cu top locuri de calatorit:
+                    <a href="https://www.momondo.ro/discover/locuri-de-vizitat-romania"> Top 20 cele mai frumoase locuri de vizitat în România </a>    
+                    </h2>
+
+                <%}else if(user.puncte<1000) {%>
+                    <h2 class="imgh2"> BRAVOOO ai depasit 500 de puncte ca premiu primesti un tricou #calatorul
+                        te vom contacta la nr de telefon <%=user.telefon %>  FELICITARI
+                    </a>    
+                        </h2>
+                    <%}%>
+                   
+               
+               <h2 class="imgh2" style="margin-top: 100px;">GRABESTE TE, fa puncte si castiga premii</h2>
+
+               <h2 class="imgh2">Prima surpriza: la 100 de puncte</h3>
+               <h2 class="imgh2">A doua surpriza: la 500 de puncte</h3>
+               <h2 class="imgh2">A treia surpriza: la 1000 de puncte</h3>
+            
+                <h3 class="imgh3" style="text-align: center;">#TURISMO</h3>
+            </div>
+
+
+        </div>
+    </div>
+
+</div>

@@ -1,0 +1,166 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+*{
+    font-family: "Montserrat",sans-serif;
+    margin:0;
+    padding: 0;
+    background-color: #2B3D52;
+}
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.navbar{
+    display: flex; 
+    justify-content: space-between;
+    align-items: center;
+    /* position: fixed; */
+   
+}
+.navbar a {   
+    font-family: inherit;
+    font-size: 25px;
+}
+li, a, ul{
+    font-weight: 500;
+    font-size:20px;
+    color:black;
+    text-decoration:none;
+    padding: 0 20px;
+    text-align: center;
+        
+}
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 20px 6%;
+}
+.button{
+    cursor:pointer;
+    font-family: "Montserrat",sans-serif;
+    font:bold;
+    font-size: 20px;
+    margin-right: auto;
+}
+ .logo{
+    width:5%;
+    height:5%;
+    margin-right: auto;
+    margin:5px; 
+}
+.nav__links ul {
+    margin:0;
+    padding:0;
+    display: flex;
+}
+.nav__links{
+    list-style: none;
+
+}
+.nav__links li{
+    display:inline-block;
+    padding: 0px 20px;
+    
+}
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+    display: block;
+    
+}
+.nav__links li a:hover {
+    color:   rgb(42, 191, 250);
+ }
+
+.button{
+    text-decoration: none;
+    color:#F4A460;
+    border: 3px solid #F4A460;
+    padding: 2rem 2rem;
+    font-size: 2rem;
+    position: relative;
+    transition: all .5s; 
+ }
+.button::before,
+.button::after{
+    content: "";
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    border-style: solid;
+    border-color: #fff;
+    transition: all .5s;
+}
+.button::before{
+    top: -1rem;
+    left: -1rem;
+    border-width: 3px 0 0 3px;
+}
+ .button::after{
+    bottom: -1rem;
+    right: -1rem;
+    border-width: 0 3px 3px 0;
+ } 
+.button:hover::before,
+.button:hover::after{
+    width: calc(100% + 2rem);
+    height: calc(100% + 2rem);
+    border-color: #fff;
+}
+.button:hover{
+    color: #272838;
+    background-color: #fff;
+    border-color: #fff;
+} 
+
+ .toggle-button{
+    position: absolute;
+    top: 2.3rem;
+    right: 4rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60px;
+    height:30px;
+}
+.toggle-button .bar{
+    height:3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 20px;
+} 
+@media (max-width:1230px){
+    .toggle-button{
+        display: flex;
+    }
+    
+    .nav__links{
+        display: none;
+        width: 100%;
+    }
+   
+    .nav__links ul{
+        width: 100%;
+         flex-direction: column;
+        align-items: flex-start;
+        margin-top: 50px;
+    }
+    .nav__links li {
+        text-align: center;
+    }
+    .button{
+        all:unset;
+    }
+    .nav__links a{
+        padding: .5rem 1rem;
+    }
+
+    .nav__links.active{
+        display: flex;
+    }
+}

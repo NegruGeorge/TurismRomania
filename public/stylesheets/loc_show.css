@@ -1,0 +1,74 @@
+img{
+    width:100%;
+    /* height: 30%; */
+}
+form{
+    width: 100%;
+    height: 8rem;
+}
+ .card-post{
+    width: 100%;
+    max-width: 98rem;
+     padding: 5rem; 
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    
+} 
+.card-post-img, .form{
+    min-width: 35rem;
+    max-width: 35rem;
+    height: 30rem;
+    /* transform: translateY(4rem);  */
+    position: relative;
+}
+.form{
+    min-width: 30rem;
+    max-width: 30rem;
+    height: 30rem;
+    /* transform: translateY(4rem);  */
+    position: relative;
+}
+.card-post-title{
+    font-size: 2.5rem;
+    margin: 1.5rem 0 2rem; 
+    text-transform: uppercase;
+    color: #F4A460;
+} 
+h2{
+    font-size: 2.5rem;
+    margin: 1.5rem 0 2rem; 
+    text-transform: uppercase;
+    color: #F4A460;
+}
+.card-post-text{
+    margin-bottom: 1.5rem;
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, .7);
+}
+.form-label{
+    /* margin-bottom: 0.5rem; */
+    font-size: 1.3rem;
+    color: rgba(0, 0, 0, .7);   
+}
+.card-post-link{
+    display: inline-block;
+    padding: 1rem 1rem;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    color: #fff;
+    text-decoration: none;
+}
+
+#map{
+   
+width: 400px;
+height: 300px;
+margin-top: 30px;
+margin-left: 60px;
+}
+
+#lasa_review{
+    text-align: left;
+    color: #F4A460;;
+}

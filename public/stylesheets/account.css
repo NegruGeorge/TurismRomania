@@ -1,0 +1,348 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+
+*{
+    box-sizing: border-box;
+    font-family: "Montserrat",sans-serif;
+    margin:0;
+    padding: 0;
+   
+}
+
+
+
+
+body{
+    background:   #a3a3c2;
+    background-size: 600% 600%;
+
+    -webkit-animation: AnimationName 8s ease infinite;
+    -moz-animation: AnimationName 8s ease infinite;
+    animation: AnimationName 8s ease infinite;
+}
+
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 50%}
+    50%{background-position:100% 50%}
+    100%{background-position:0% 50%}
+}
+
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+   
+}
+
+.navbar a {   
+    font-family: inherit;
+    font-size: 25px;
+}
+
+
+
+li,a,button,input,label{
+    
+    font-weight: 500;
+    font-size:20px;
+    color:black;
+    text-decoration:none
+
+}
+
+
+header{
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 30px 6%;
+}
+.siteName{
+    cursor:pointer;
+    font-family: "Montserrat",sans-serif;
+    font:bold;
+    font-size: 40px;
+    margin-right: auto;
+
+}
+ 
+
+.logo{
+    width:5%;
+    height:5%;
+    margin-right: auto;
+    margin:5px;
+  
+}
+
+.nav__links ul {
+    margin:0;
+    padding:0;
+    display: flex;
+}
+
+.nav__links{
+    list-style: none;
+}
+
+
+
+.nav__links li{
+    display:inline-block;
+    padding: 0px 20px;
+}
+
+.nav__links li a {
+    transition: all 0.3s ease 0s;
+    display: block;
+}
+.nav__links li a:hover {
+    color:   rgb(134, 134, 134);
+}
+
+button{
+    font-size: 25px;
+   
+    padding:9px 25px;
+    background-color: rgb(61, 61, 61);
+    border:none;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all 0.3s ease 0s;
+}
+
+.aboutbutton{
+    margin-left: 30px;
+    margin-top: -10px;
+}
+
+button:hover{
+    background-color:rgb(134, 134, 134);
+}
+
+.toggle-button{
+    position: absolute;
+    top: 2.3rem;
+    right: 4rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 60px;
+    height:30px;
+}
+
+.toggle-button .bar{
+    height:3px;
+    width: 100%;
+    background-color: black;
+    border-radius: 20px;
+}
+@media (max-width:1230px){
+    .toggle-button{
+        display: flex;
+    }
+    
+    .nav__links{
+        display: none;
+        width: 100%;
+    }
+   
+    .nav__links ul{
+        width: 100%;
+         flex-direction: column;
+        align-items: flex-start;
+        margin-top: 50px;
+    }
+    .nav__links li {
+        text-align: center;
+    }
+    .aboutbutton{
+        all:unset;
+    }
+    .nav__links a{
+        padding: .5rem 1rem;
+    }
+
+    .nav__links.active{
+        display: flex;
+    }
+}
+
+
+/* FLEXBOX */
+.flexbox-item-1{
+    background-color: #fff;
+    border-radius:5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    overflow: hidden;
+    width: 500px;
+    max-width: 100%;
+    margin-bottom:100px;
+    position: relative;
+    
+}
+
+
+
+
+.addceva{
+    background-color:rebeccapurple;
+    
+}
+
+.header{
+    background-color:#f7f7f7;
+    border-bottom: 1px solid #f0f0f0;
+    padding: 30px ;
+    
+}
+
+.header h1{
+    text-align: center;
+    margin:0;
+}
+
+.form{
+    padding: 30px 40px;
+}
+
+.form-control{
+    margin-bottom: 10px;
+    padding-bottom: 20px;
+    position: relative;
+}
+.form-control label{
+    display: inline-block;
+    margin-bottom: 5px;
+}
+.form-control input{
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    font-family: inherit;
+    font-size: 20px;
+    width: 100%;
+    padding:16px;
+}
+.form-control small{
+    position: absolute;
+    bottom:0;
+    left:0;
+}
+
+
+
+
+
+
+.h2works{
+    visibility:visible;
+    background-color: lightgreen;
+    padding: 20px 40px; 
+}
+
+
+.form button{
+    margin-top:15px;
+    padding :15px;
+    width: 100%;
+    display: block;
+   
+}
+
+
+ .flexbox-container{
+    display:flex;
+    flex-wrap: wrap;
+   
+    justify-content: space-around;
+} 
+ 
+.actions{
+    margin-top: 100px;
+}
+
+
+
+/* FLEXBOX VIDEO */
+
+.flexbox-video-1{
+    background-color: #fff;
+    border-radius:5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+    
+    overflow: hidden;
+    width:1000px;
+    height: 770px;
+    max-width: 100%;
+    margin-bottom:100px;
+    position: absolute;
+}
+
+
+/* .imgBox{
+    background-color: #fff;
+    border-radius:5px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+
+    top:20px;
+    left:200px;
+    overflow: hidden;
+    width:600px;
+    height: 500px;
+    max-width: 100%;
+    margin-bottom:100px;
+    position: relative;
+   
+} */
+
+.imgBox{
+    
+    margin:20px;
+}
+
+.imgh1{
+    margin:10px;
+    margin-bottom: 30px;
+}
+
+.imgh2{
+    margin:10px;
+    
+}
+.imgh3{
+    
+    margin:10px;
+    margin-top: 150px;
+}
+
+
+.githubpage{
+    font-size: 20px;
+    
+}
+
+
+.h2description{
+    font-size: 20px;
+    margin-top: 25px;
+    text-align: center;
+}
+.h2message{
+    font-size: 20px;
+    text-align: center;
+    
+}
+
+

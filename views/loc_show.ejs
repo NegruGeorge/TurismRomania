@@ -1,0 +1,193 @@
+
+<link rel="stylesheet"  href="/stylesheets/loc_show.css">
+<script src='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v1.12.0/mapbox-gl.css' rel='stylesheet' />
+<link rel="stylesheet" href="/stylesheets/stars.css">
+<link rel ="stylesheet" href = https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css>
+<link rel="stylesheet"  href="/stylesheets/header.css">
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+
+
+
+<header>
+      
+    <!-- <img src="/images/Poza.jpg" > -->
+    <a href="/map" class="button">TOURISM</a>
+
+  
+    <nav class="navbar">
+        <a href="#"  class="toggle-button">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </a>
+        <div class="nav__links">
+            <ul>
+               <li>
+                  <a href="/map">
+                     <div class="icon">
+                        <i class="fa fa-home" aria-hidden="true"></i>
+                     </div>
+                     <div class="mame" data-text="Home">Home</div>
+                  </a>
+               </li>
+               <li>
+                  <a href="/about">
+                     <div class="icon">
+                        <i class="fa fa-file-text-o" aria-hidden="true"></i>
+                     </div>
+                     <div class="mame" data-text="About">About</div>
+                  </a>
+               </li>
+               <li>
+                <% if((typeof(session)!=="undefined")){%>
+                  <a href="/signout">
+                     <div class="icon">
+                        <i class="fa fa-minus" aria-hidden="true"></i>
+                     </div>
+                     <div class="mame" data-text="Add"><a href="/signout">Sign out</a></div>
+                  </a>
+
+                <%}else{%>
+                    <a href="/signup">
+                        <div class="icon">
+                           <i class="fa fa-plus" aria-hidden="true"></i>
+                        </div>
+                        <div class="mame" data-text="Add"><a href="/signup">Sign up</a></div>
+                     </a>
+                <%}%>
+               </li>
+               <li>
+                  <a href="#">
+                     <div class="icon">
+                        <i class="fa fa-user" aria-hidden="true"></i>
+                     </div>
+                     <% if((typeof(session)!=="undefined")){%>
+                     <div class="mame" data-text="Home"><a href="/account">Account</a></div>
+                     <%}else{ %>
+                        <div class="mame" data-text="Home"><a href="/signin">Sign in</a></div>
+                     <%} %>  
+                  </a>
+               </li>
+               
+
+        </ul>
+        </div>
+        &nbsp; &nbsp;
+    </nav>
+    &nbsp; &nbsp;
+    <script src="/js/header.js"></script>
+</header>
+
+
+
+
+
+<div class="container">
+<ul>
+  
+
+
+   &nbsp; &nbsp;
+   <div class="card"  mb-3>
+       
+       <div class="row">
+           <div class="col-md-6">
+               &nbsp;
+               <img src="<%=locatie.img%>" alt=""> 
+               <div class="card-body">
+                   <div class="card-body">
+                       <h5 class="card-post-title">Obiectiv: <%=locatie.titlu_obiectiv%></h5>
+                       <p class="card-post-text" style=" font-weight: bold;"><%=locatie.descriere%></p>
+                       <a href="<%=locatie.link%>" class="card-post-link">Apasati pentru a accesa direct pagina obiectivului turistic</a>
+                       <p>Pentru aceasta locatie primiti <%= 10*locatie.categorie%> puncte</p>
+                   </div>
+               </div>
+           </div>
+           
+           <div class="col-md-6">
+            <div class="mb-3">
+    
+    
+                <div id='map' ></div>
+            
+            
+                <script>
+                    let loc = <%- JSON.stringify(locatie) %>
+                </script>
+                
+                <script src="/js/map.js"></script>
+                
+            
+            </div>
+
+            <% if((typeof(session)!=="undefined")){%>
+                <h3 id='lasa_review'>lasa un review</h3>
+                <form  method="POST" action="/map/<%=locatie.id_locatie%>/reviews"  class="mb-3">
+                    <!-- <div class="mb-3">
+                        <label class="form-label" for="rating">Rating</label>
+                        <input class="form-range" type="range" min="1" max="5" name="review[rating]" id="rating">
+                    </div> -->
+
+                    <!-- <div class="mb-3"> -->
+                        <fieldset class="starability-basic">
+                            <input type="radio" id="no-rate" class="input-no-rate" name="review[rating]" value="1" checked aria-label="No rating." />
+                            <input type="radio" id="first-rate1" name="review[rating]" value="1" />
+                            <label for="first-rate1" title="Terrible">1 star</label>
+                            <input type="radio" id="first-rate2" name="review[rating]" value="2" />
+                            <label for="first-rate2" title="Not good">2 stars</label>
+                            <input type="radio" id="first-rate3" name="review[rating]" value="3" />
+                            <label for="first-rate3" title="Average">3 stars</label>
+                            <input type="radio" id="first-rate4" name="review[rating]" value="4" />
+                            <label for="first-rate4" title="Very good">4 stars</label>
+                            <input type="radio" id="first-rate5" name="review[rating]" value="5" />
+                            <label for="first-rate5" title="Amazing">5 stars</label>
+                          </fieldset>
+                    <!-- </div> -->
+                   
+
+                    <div class="mb-3">
+                        <!-- <label class="form-label" for="body">Laza o recenzie</label> -->
+                        <textarea class="form-control" name="review[body]" id="body" cols="30" rows="10"></textarea>
+                    </div>
+                    <input hidden value="<%=locatie.categorie%>" name="locatie_categorie">
+                    <button class="btn btn-success">Submit</button>
+                    
+                </form>
+            <%}%>
+            
+            <div style="margin-top: 300px;">
+                <% for(let review of reviews) { %>
+                    <div class="card mb-3">
+                        <div class="card-body">
+                            <h5 id="nume_pren" style="text-align: left;"><%=review.nume%>-<%=review.prenume%></h5>
+                            <!-- <p >Rating: <%=review.rating %></p> -->
+                            <p class="starability-result" data-rating="<%=review.rating %>">
+                                Rated: <%=review.rating %> start1
+                            </p>
+                            <p class="card-text" style="text-align: left;"><strong>comentariu:</strong> <%= review.comentariu %></p>
+                            <% if(typeof(session)!=="undefined" && session===review.id_user) { %>
+                            <form   action="/map/<%=locatie.id_locatie%>/reviews/<%=review.id_review%>" method="POST" >
+                                <button class="btn btn-sm btn-danger">Delete</button>
+                            </form>
+                            <%}%>
+                        </div>
+                    </div>
+                   
+                <%} %>
+            </div>
+              
+            
+                   
+           </div>
+       </div>
+
+   </div>
+
+  
+</ul>
+</div>
+
+ 

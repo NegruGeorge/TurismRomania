@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <link rel="stylesheet" href="app.css" />
+
+    </head>
+
+    <body>
+        <div class="container">
+            <h1>Bara de progres</h1>
+            <div id="stepProgressBar">
+                <div class="step">
+                    <p class="step-text">Pasul 1</p>
+                    <div class="bullet">1</div>
+                </div>
+                <div class="step">
+                    <p class="step-text">Pasul 2</p>
+                    <div class="bullet">2</div>
+                </div>
+
+                <div class="step">
+                    <p class="step-text">Pasul 3</p>
+                    <div class="bullet">3</div>
+                </div>
+
+                <div class="step">
+                    <p class="step-text">Pasul 4</p>
+                    <div class="bullet">4</div>
+                </div>
+            </div>
+            <div id="main">
+                <p id="content">Pasul 1: Pentru a trece la urmatorul nivel trebuie sa adunati 10 de puncte</p>
+                <button id="previousBtn" disabled>Previous</button>
+                <button id="nextBtn">Next</button>
+                <button id="finishBtn" disabled>Finish</button>
+            </div>
+        </div>
+        <script src="app.js"></script>
+    </body>
+</html>
