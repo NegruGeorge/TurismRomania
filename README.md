@@ -1,7 +1,6 @@
 BotsLand
 ==============
-
-This project was made douring BestBucharest hackathon and we got the 3th place
+this project was made during BestBucharest's hackathon where we got 3rd place.(this was our first hackathon)
 Tourism Romania    website: https://tourismromania.herokuapp.com
 
 Usage
