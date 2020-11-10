@@ -1,8 +1,8 @@
-BotsLand
+TurismRomania
 ==============
 this project was made during BestBucharest's hackathon where we got 3rd place.(this was our first hackathon)
 Tourism Romania    website: https://tourismromania.herokuapp.com
-
+This is a site where you can check the map, visit and review a place, get points and win prizes.
 Usage
 -----
 
