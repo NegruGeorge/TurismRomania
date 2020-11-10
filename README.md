@@ -67,3 +67,4 @@ What i Learned
 * How to work with my team and under stress
 * Node.js/javascript/html/css/mysql
 * hashing passwords, cookie-sessions, login-logout, user interactions.
+* create latitude and longitude with geodata from mapbox
