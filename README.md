@@ -61,7 +61,7 @@ install the packages
  
 
 
-What i Learned
+What I Learned
 -----
 * Using Maps and maps api (mapbox)
 * How to work with my team and under stress
